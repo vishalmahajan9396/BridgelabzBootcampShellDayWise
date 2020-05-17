@@ -1,0 +1,71 @@
+#!/bin/bash -x
+month=(january february march april may june july august september october november december )
+countOne=0;
+countTwo=0;
+countThree=0;
+countFour=0;
+countFive=0;
+countSix=0;
+countSeven=0;
+countEight=0;
+countNine=0;
+countTen=0;
+countEleven=0;
+countTwelve=0;
+
+declare -A birthDictionary
+for((person=1;person<=50;person++))
+do
+	birthMonth=$((RANDOM%12+1))
+	case $birthMonth in
+	1)
+		((countOne++))
+		birthDictionary[${month[0]}]=$countOne
+		;;
+	2)
+      ((countTwo++))
+      birthDictionary[${month[1]}]=$countTwo
+      ;;
+	3)
+      ((countThree++))
+      birthDictionary[${month[2]}]=$countThree
+      ;;
+	4)
+      ((countFour++))
+      birthDictionary[${month[3]}]=$countFour
+      ;;
+	5)
+      ((countFive++))
+      birthDictionary[${month[4]}]=$countFive
+      ;;
+	6)
+      ((countSix++))
+      birthDictionary[${month[5]}]=$countSix
+      ;;
+	7)
+      ((countSeven++))
+      birthDictionary[${month[6]}]=$countSeven
+      ;;
+	8)
+      ((countEight++))
+      birthDictionary[${month[7]}]=$countEight
+      ;;
+	9)
+      ((countNine++))
+      birthDictionary[${month[8]}]=$countNine
+      ;;
+	10)
+      ((countTen++))
+      birthDictionary[${month[9]}]=$countTen
+      ;;
+	11)
+      ((countEleven++))
+      birthDictionary[${month[10]}]=$countEleven
+      ;;
+   12)
+      ((countTwelve++))
+      birthDictionary[${month[11]}]=$countTwelve
+      ;;
+	esac
+done
+echo "Birth dictionary is:" ${birthDictionary[@]};
